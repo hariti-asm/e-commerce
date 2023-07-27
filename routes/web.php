@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,7 @@ Route::get('/dashboard', function () {
 Route::get('/redirect',[HomeController::class,'redirect']);
 Route::get('/',[HomeController::class,'index']);
 
+Route::get('/product',[AdminController::class,'product']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
