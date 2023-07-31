@@ -36,7 +36,7 @@ label{
         <h1 class="text-white pt-6 text-2xl"> Add Products</h1>
         <form>
     <div class="p-2">
-
+{{-- YGYGUI --}}
 <label  > Product title</label>
 <input type="text" name="title" placeholder="Give a product title" required="">
 
