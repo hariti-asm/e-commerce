@@ -22,9 +22,7 @@ label{
 }
 
 </style>
-
-
-  </head>
+</head>
   <body>
     <div class="container-scroller">
 
@@ -34,38 +32,48 @@ label{
         <div class="container-fluid page-body-wrapper">
        <div class=" container" align="center">
         <h1 class="text-white pt-6 text-2xl"> Add Products</h1>
-        <form>
-    <div class="p-2">
-{{-- YGYGUI --}}
+
+@if(session()->has('message'))
+
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">x</button>
+{{session()->get('message')}}
+</div>
+
+
+@endif
+        <form   action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
+        @csrf
+            <div class="p-2">
 <label  > Product title</label>
-<input type="text" name="title" placeholder="Give a product title" required="">
+<input class="text-black" type="text" name="title" placeholder="Give a product title" required="">
 
     </div>
     <div class="p-2">
 
         <label > Price</label>
-        <input type="number" name="price" placeholder="enter a price" required="">
+        <input class="text-black" type="number" name="price" placeholder="enter a price" required="">
 
             </div>
             <div class="p-2">
 
                 <label  > Description</label>
-                <input type="text" name="des" placeholder="Give a description" required="">
+                <input class="text-black" type="text" name="des" placeholder="Give a description" required="">
 
                     </div>
     <div class="p-2">
 
         <label  > Quantity</label>
-        <input type="text" name="quantity" placeholder="Product quantity" required="">
+        <input class="text-black" type="text" name="quantity" placeholder="Product quantity" required="">
 
             </div>
             <div class="p-2">
-                <input type="file" name="file" >
+                <input class="text-black" type="file" name="file" >
 
                     </div>
                     <div class="p-2">
 
-                        <input class="btn btn-success" type="submit"  placeholder="Give a product title" required="">
+                        <input class="text-black" class="btn btn-success" type="submit"  placeholder="Give a product title" required="">
 
                             </div>
                         </form>
