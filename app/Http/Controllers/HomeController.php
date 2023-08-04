@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Product;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -15,8 +17,8 @@ class HomeController extends Controller
 
         }
         else{
-
-            return view ('user.home');
+            $data = product::all();
+            return view('user.home',compact('data'));
         }
     }
     public function index(){
@@ -26,8 +28,8 @@ class HomeController extends Controller
 
     return redirect('redirect');
   } else {
-
-    return view('user.home');
+        $data = product::all();
+    return view('user.home',compact('data'));
 
   }
     }
