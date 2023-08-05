@@ -5,6 +5,7 @@
           <div class="section-heading">
             <h2>Latest Products</h2>
             <a href="products.html">view all prod,ucts <i class="fa fa-angle-right"></i></a>
+
           </div>
         </div>
 
@@ -26,6 +27,8 @@
           </div>
         </div>
         @endforeach
+
+        <div class="d-flex justify-content-center align-items-end ">{{ $data->links()}}</div>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ class HomeController extends Controller
 
         }
         else{
-            $data = product::all();
+            $data = product::paginate(3);
             return view('user.home',compact('data'));
         }
     }
@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     return redirect('redirect');
   } else {
-        $data = product::all();
+        $data = product::paginate(3);
     return view('user.home',compact('data'));
 
   }
