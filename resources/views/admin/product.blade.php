@@ -33,19 +33,19 @@ label{
        <div class=" container" align="center">
         <h1 class="text-white pt-6 text-2xl"> Add Products</h1>
 
-@if(session()->has('message'))
+            @if(session()->has('message'))
 
 
 
-<div class="alert alert-info">
-    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <div class="alert alert-info">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
 
-    {{session()->get('message')}}
+                {{session()->get('message')}}
 
-</div>
+            </div>
 
 
-@endif
+            @endif
         <form   action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
         @csrf
             <div class="p-2">
