@@ -55,4 +55,29 @@ public function updateview($id){
 
 }
 
+
+public function updateproduct( Request $request,$id){
+
+
+    $data=product::find($id);
+    $image = $request->file('file'); // Corrected: Use "file" method on $request
+    if($image){
+    $imagename = time() . '.' . $image->getClientOriginalExtension();
+    $image->move('productimage', $imagename);
+
+    $data->image = $imagename; // Corrected: Assign the image name to the "image" property
+    }
+    $data->title = $request->title;
+    $data->price = $request->price;
+    $data->description = $request->description;
+    $data->quantity = $request->quantity;
+    $data->save();
+    return redirect()->back()->with('message','Product successfuly updated');
+
+
+}
+
+
+
+
 }
